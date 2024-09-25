@@ -1,9 +1,8 @@
+
 ### Get all poems
 GET http://localhost:7007/api/poems
 
 ### Create a new poem
-
-
 POST http://localhost:7007/api/poem
 Content-Type: application/json
 
@@ -27,3 +26,24 @@ Content-Type: application/json
 "poem": "Across ancient arches ants advance, Awaiting autumn's amber dance, Amidst the air, an ardent breeze, Awakens all the aspen trees."
 }
 
+### Delete a poem (ID 2)
+
+DELETE http://localhost:7007/api/poem/2
+
+
+### Update a poem (ID 1)
+
+PUT http://localhost:7007/api/poem/1
+Content-Type: application/json
+
+{
+  "type": "ALLITERATION",
+  "author": "ChatGPT",
+  "title": "Wandering Wolves",
+  "poem": "Wandering wolves wait warily, Watching woods with wise wonder, While winds whip wild wilderness, Whispers of winter wander wide."
+}
+
+
+
+### Get a poem by ID (ID 1)
+GET http://localhost:7007/api/poem/1

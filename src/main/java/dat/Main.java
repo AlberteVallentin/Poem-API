@@ -3,14 +3,12 @@ package dat;
 import dat.config.HibernateConfig;
 import dat.controllers.PoemController;
 import io.javalin.Javalin;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory("poems");
-        EntityManager entityManager = emf.createEntityManager();
-        PoemController poemController = new PoemController(entityManager);
+        PoemController poemController = new PoemController(emf);
 
         var app = Javalin.create(config -> {
             config.router.contextPath = "/api";
