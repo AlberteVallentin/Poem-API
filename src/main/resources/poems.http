@@ -1,0 +1,14 @@
+### Get all poems
+GET http://localhost:7007/api/poems
+
+### Create a new poem
+
+POST http://localhost:7007/api/poem
+Content-Type: application/json
+
+{
+  "type": "ALLITERATION",
+  "author": "ChatGPT",
+  "title": "Singing Stars",
+  "poem": "Silent stars softly sing,\nShining bright with silver wings,\nSkies stretch, so still they stand,\nSending sparkles to the sand."
+}
