@@ -3,6 +3,7 @@ GET http://localhost:7007/api/poems
 
 ### Create a new poem
 
+
 POST http://localhost:7007/api/poem
 Content-Type: application/json
 
@@ -10,5 +11,19 @@ Content-Type: application/json
   "type": "ALLITERATION",
   "author": "ChatGPT",
   "title": "Singing Stars",
-  "poem": "Silent stars softly sing,\nShining bright with silver wings,\nSkies stretch, so still they stand,\nSending sparkles to the sand."
+  "poem": "Silent stars softly sing, Shining bright with silver wings, Skies stretch, so still they stand, Sending sparkles to the sand."
 }
+
+
+### Create a new poem
+
+POST http://localhost:7007/api/poem
+Content-Type: application/json
+
+{
+"type": "ALLITERATION",
+"author": "ChatGPT",
+"title": "Amazing Adventure",
+"poem": "Across ancient arches ants advance, Awaiting autumn's amber dance, Amidst the air, an ardent breeze, Awakens all the aspen trees."
+}
+

@@ -1,4 +1,5 @@
 package dat.daos;
+
 import dat.entities.Poem;
 import jakarta.persistence.EntityManager;
 
@@ -20,9 +21,13 @@ public class PoemDAO {
     }
 
     public void savePoem(Poem poem) {
-        entityManager.getTransaction().begin();
-        entityManager.persist(poem);
-        entityManager.getTransaction().commit();
+        if (!poemExists(poem)) {
+            entityManager.getTransaction().begin();
+            entityManager.persist(poem);
+            entityManager.getTransaction().commit();
+        } else {
+            System.out.println("Poem already exists and will not be saved.");
+        }
     }
 
     public void updatePoem(Poem poem) {
