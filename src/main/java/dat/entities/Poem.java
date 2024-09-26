@@ -1,9 +1,9 @@
 package dat.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -11,6 +11,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @ToString
 @Entity
+@Setter
 @Accessors(chain = true)
 public class Poem {
     @Id

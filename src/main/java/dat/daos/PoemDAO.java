@@ -22,9 +22,16 @@ public class PoemDAO {
 
     public void savePoem(Poem poem) {
         if (!poemExists(poem)) {
-            entityManager.getTransaction().begin();
-            entityManager.persist(poem);
-            entityManager.getTransaction().commit();
+            try {
+                entityManager.getTransaction().begin();
+                entityManager.persist(poem);
+                entityManager.getTransaction().commit();
+            } catch (Exception e) {
+                if (entityManager.getTransaction().isActive()) {
+                    entityManager.getTransaction().rollback();
+                }
+                e.printStackTrace();
+            }
         } else {
             System.out.println("Poem already exists and will not be saved.");
         }
